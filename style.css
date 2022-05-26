@@ -1,7 +1,12 @@
+html{
+    height: -webkit-fill-available;
+}
 body{
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    height: -webkit-fill-available;
 }
 div, section{
     box-sizing: border-box;
@@ -200,3 +205,9 @@ section{
         left: 70px;
     }
 }
+@supports (-webkit-touch-callout: none) {
+    body {
+      /* The hack for Safari */
+      height: -webkit-fill-available;
+    }
+  }
