@@ -1,0 +1,202 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+div, section{
+    box-sizing: border-box;
+}
+section{
+    background: #131417;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    flex-wrap: wrap;
+    overflow: hidden;
+    padding: 100px 0;
+    
+}
+.cardBox{
+    width: 350px;
+    height: 400px;
+    transition: 0.3s ease-in-out;
+    border-radius: 25px;
+    position: relative;
+    z-index: 3;
+}
+
+.circles{
+    position: absolute;
+    border-radius: 50%;
+    transition: 0.3s ease-in-out;
+}
+.circles:nth-child(1){
+    width: 150px;
+    height: 150px;
+    background-image: linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%);
+    top: -60px;
+    left: -40px;
+}
+.circles:nth-child(2){
+    width: 150px;
+    height: 150px;
+    background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
+    bottom: -60px;
+    right: -40px;
+}
+.circles:nth-child(3){
+    width: 80px;
+    height: 80px;
+    background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
+    top: 60px;
+    left: -30px;
+    background-color: #a40606;
+}
+.circles:nth-child(4){
+    width: 80px;
+    height: 80px;
+    background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
+    top: -30px;
+    left: 80px;
+}
+.cardBox:hover .circles{
+    animation: anim1 0.5s ease-in-out;
+}
+@keyframes anim1{
+    0%{
+        transform: translateY(0px) ;
+    }
+    40%{
+        transform: translate(2%,2%)  ;
+    }
+    70%{
+        transform: translate(-2%,-2%)  ;
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+.cardContent{
+    position: absolute;
+    z-index: 2;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    /* inner style */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.cardContent > img{
+    display: block;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 10px solid rgba(255,255,255,0.2);
+}
+.cardContent > h1 {
+    font-size: 23px;
+    margin:10px 0 0 0;
+}
+.cardContent > p{
+    font-size: 16px;
+    margin:10px 0 15px 0;
+}
+
+.cardSocialIcons{
+    display: flex;
+    width: max-content;
+}
+.cardSocialIcons > a{
+    transition: 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin: 0 5px;
+    width: 45px;
+    height: 45px;
+    background: rgba(255,255,255,0.2);
+    border: 2px solid rgba(255,255,255,0.1);
+    border-radius: 50%;
+    box-shadow: 0 0 20px  rgba(8,7,16,0.6);
+}
+.cardSocialIcons > a > i {
+    transition: 0.3s ease-in-out;
+    font-size: 25px;
+    color:#09c6f9 ;
+}
+.cardSocialIcons > a:hover{
+    box-shadow: 0 0 10px 1px  rgba(8,7,16,0.6);
+    transform: scale(1.05);
+}
+.cardSocialIcons > a:hover i{
+    transform: scale(1.05);
+}
+.cardContent > .buttons{
+    display: flex;
+    width: calc(100% - 50px);
+    gap: 15px;
+}
+.cardContent > .buttons > button{
+    transition: 0.1s ease-in-out;
+    width: 50%;
+    padding: 12px 0;
+    margin-top: 15px;
+    border-radius: 5px;
+    outline: none;
+    background: rgba(255,255,255,0.2);
+    box-shadow: 0 0 40px  rgba(8,7,16,0.6);
+    color: #d0d1d6;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+}
+.cardContent > .buttons > button:hover{
+    background: rgba(255,255,255,0.3);
+    box-shadow: 0 0 10px 1px rgba(8,7,16,0.6);
+}
+
+
+
+
+@media only screen and (max-width:500px){
+    .cardBox{
+        width: 290px;
+        height: 400px;
+    }
+    .circles:nth-child(1){
+        width: 100px;
+        height: 100px;
+        left: -20px;
+        top:-30px;
+    }
+    .circles:nth-child(2){
+        width: 100px;
+        height: 100px;
+        bottom: -30px;
+        right:-20px;
+    }
+    .circles:nth-child(3){
+        width: 70px;
+        height: 70px;
+        top: 70px;
+        left: -10px;
+    }
+    .circles:nth-child(4){
+        width: 70px;
+        height: 70px;
+        top: -10px;
+        left: 70px;
+    }
+}
